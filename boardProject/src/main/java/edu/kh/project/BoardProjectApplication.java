@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
+// Git Hub 팀 프로젝트 수정 테스트
 @SpringBootApplication
 public class BoardProjectApplication {
 
