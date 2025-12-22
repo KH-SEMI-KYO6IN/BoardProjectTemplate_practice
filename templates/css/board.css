@@ -1,0 +1,176 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard', sans-serif;
+}
+
+body {
+    background-color: #f8faff;
+    padding: 40px 0;
+}
+
+/* 전체 감싸는 섹션 - 수직 정렬로 변경 */
+.board-list {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    /* 중요: 자식 요소들을 위에서 아래로 쌓음 */
+    display: flex;
+    flex-direction: column; 
+}
+
+/* 상단 탭 메뉴 (파란색 바) */
+.board-list > ul {
+    display: flex;
+    list-style: none;
+    background: linear-gradient(to right, #5c86e0, #739df0);
+    padding: 0 20px;
+    height: 60px;
+    align-items: center;
+}
+
+.board-list > ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 16px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.board-list > ul li:first-child a {
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.board-list > ul li a:hover {
+    opacity: 1;
+}
+
+/* 테이블 영역 */
+.list-wrapper {
+    padding: 20px 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table thead th {
+    color: #5c86e0;
+    padding: 15px 5px;
+    border-bottom: 2px solid #f0f0f0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+table tbody td {
+    padding: 15px 5px;
+    border-bottom: 1px solid #f7f7f7;
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+}
+
+/* 제목 열만 왼쪽 정렬 */
+table tbody td:nth-child(3) {
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* 페이지네이션 */
+.pagination-area {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.pagination li a.current {
+    background-color: #5c86e0;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* 검색창 및 글쓰기 버튼 하단 영역 */
+.btn-area {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 30px;
+    margin-bottom: 10px;
+}
+
+#insertBtn {
+    background-color: #5c86e0;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+#insertBtn:hover {
+    background-color: #4a6ec4;
+}
+
+/* 검색창 */
+form[name="searchForm"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0; /* 버튼과 인풋 밀착 */
+    padding: 0 0 40px 0;
+}
+
+/* 드롭다운 스타일 (select로 변경 권장) */
+form[name="searchForm"] section {
+    display: flex;
+    flex-direction: column; /* 기존 option 나열 방지 */
+}
+
+#searchQuery {
+    width: 320px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+#searchBtn {
+    background-color: #5c86e0;
+    color: white;
+    border: 1px solid #5c86e0;
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+

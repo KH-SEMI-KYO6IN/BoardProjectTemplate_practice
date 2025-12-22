@@ -1,0 +1,43 @@
+<header>
+  <section>
+    <!-- 클릭 시 메인 페인지로 이동하는 로고 -->
+    <a href="#">
+      <img src="#" alt="메인 로고" id="homeLogo">
+    </a>
+  </section>
+
+  <!-- 안 쓰는 섹션-->
+  <section></section>
+
+  <section>
+    <a href="#">게시판</a>
+  </section>
+  <section>
+    <a href="#">채팅</a>
+  </section>
+  <section>
+    <a href="#">로그인</a>
+  </section>
+</header>
+
+<!-- navigator -->
+<nav>
+  <ul>
+    <li><a href="#">자유 게시판</a></li>
+    <li><a href="#">질문 게시판</a></li>
+    <li><a href="#">급식표 게시판</a></li>
+    <li><a href="#">입시정보 게시판</a></li>
+    <li><a href="#">문제풀이 게시판</a></li>
+    <li><a href="#">공지사항</a></li>
+  </ul>
+</nav>
+<!-- cf. # 게시판 번호 부여시 아래와 같은 형식으로 변경할것 
+  <th:block th:each=" boardType: ${application.boardTypeList}">
+    <li>
+      <a th:href="@{/board/{boardCode}(boardCode=${boardType.boardCode})}" 
+      th:text="${boardType.boardName}">게시판이름</a>
+    </li>
+  </th:block> 
+-->
+
+
