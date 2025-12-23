@@ -1,14 +1,14 @@
-/* 기본 스타일 초기화 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Pretendard', sans-serif;
+*{
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #f8faff;
-    padding: 40px 0;
+  margin: 0;
+}
+
+main {
+  width: 1140px;
+  margin: auto; /* 좌우 가운데 정렬을 위해서 */
 }
 
 /* 전체 감싸는 섹션 - 수직 정렬로 변경 */
@@ -101,12 +101,18 @@ table tbody td:nth-child(3) {
     gap: 8px;
 }
 
+
 .pagination li a {
+    display: flex; /* 가로 배열 유지 */
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: #666;
     font-size: 14px;
-    padding: 5px 10px;
-    border-radius: 4px;
+    width: 30px;  /* 원형 크기 고정 */
+    height: 30px;
+    border-radius: 50%; /* 기본적으로 원형 틀 유지 */
+    transition: 0.3s;
 }
 
 .pagination li a.current {
@@ -145,32 +151,205 @@ form[name="searchForm"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0; /* 버튼과 인풋 밀착 */
-    padding: 0 0 40px 0;
+    padding: 20px 0 40px 0;
 }
 
 /* 드롭다운 스타일 (select로 변경 권장) */
-form[name="searchForm"] section {
-    display: flex;
-    flex-direction: column; /* 기존 option 나열 방지 */
+
+
+#searchKey {
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-right: none; /* 인풋창과 붙이기 */
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 #searchQuery {
     width: 320px;
+    height: 40px;
     padding: 10px 15px;
     border: 1px solid #ddd;
-    border-right: none;
-    border-radius: 4px 0 0 4px;
     outline: none;
 }
 
 #searchBtn {
+    width: 45px;
+    height: 40px;
     background-color: #5c86e0;
     color: white;
     border: 1px solid #5c86e0;
-    padding: 10px 15px;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
     font-size: 16px;
 }
+
+/*========================== header / footer ================================*/
+header {
+    background-color: #5C81D3; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 60px;
+    color: white;
+}
+
+header section:first-child #homeLogo {
+    height: 30px; /* 로고 크기 조절 */
+    filter: brightness(0) invert(1); /* 검정 로고일 경우 흰색으로 변경 */
+}
+
+header section:nth-child(2) {
+    flex-grow: 1; /* 빈 공간 확보 */
+}
+
+/* 게시판, 채팅, 로그인 메뉴 */
+header section:not(:first-child):not(:nth-child(2)) {
+    margin-left: 25px;
+}
+
+header section a {
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+header section a:hover {
+    opacity: 1;
+}
+
+
+nav {
+    background-color: white;
+    border-bottom: 1px solid var(--border-light);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    padding-right: 5%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #5C81D3;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--hover-blue);
+    text-decoration: underline;
+}
+
+header {
+    background-color: #5c86e0; /* var(--main-blue) 대신 직접 지정 또는 변수 확인 */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    color: white;
+}
+
+/* 게시판, 채팅, 로그인 메뉴들을 감싸는 영역 */
+header section:last-of-type {
+    display: flex;
+    align-items: center;
+}
+
+header section a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 25px; /* 메뉴 간 간격 */
+    opacity: 0.9;
+}
+
+
+/*======footer=====*/
+footer {
+    background-color: #f0f2f5; /* 아주 연한 회색 배경 */
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e1e1e1;
+    color: #666;
+    font-size: 13px;
+    margin-top: auto; /* 페이지 내용이 적어도 하단에 위치하도록 함 */
+}
+
+
+footer > div {
+    display: flex;
+    width: 1140px;
+    margin: auto;
+}
+
+
+/* footer left - 정책 링크 메뉴 */
+
+footer > div section:first-child ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+footer > div section:first-child ul li a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+}
+
+footer > div section:first-child ul li a:hover {
+    color: #333;
+}
+
+/* 중간 빈 섹션 */
+footer > div section:nth-child(2) {
+    flex-grow: 1;
+}
+
+/* footer right (안내 문구, 위로가기 버튼_) */
+footer > div section:last-child {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 1140px;
+    margin: auto;
+}
+
+footer > div section:last-child pre {
+    margin: 0;
+    color: #888;
+    max-width: 400px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* 위로 가기 아이콘 (이미지의 파란색 화살표 버튼) */
+#arrowUpBtn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+
+
 

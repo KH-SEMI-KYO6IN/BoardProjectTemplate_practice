@@ -12,9 +12,58 @@
   <!-- font awesome 라이브러리 추가 + key 등록-->
   <script src="https://kit.fontawesome.com/0968aeef36.js" crossorigin="anonymous"></script>
 
-
 </head>
-<body>
+
+
+<main>
+
+  <!-- # 추후 common에서 조립하여 쓸 수 있도록 한다.-->
+  <header>
+  <section>
+    <!-- 클릭 시 메인 페인지로 이동하는 로고 -->
+    <a href="#">
+      <img src="#" alt="메인 로고" id="homeLogo">
+    </a>
+  </section>
+
+  <!-- 안 쓰는 섹션-->
+  <section></section>
+
+  <section>
+    <a href="#">게시판</a>
+  </section>
+  <section>
+    <a href="#">채팅</a>
+  </section>
+  <section>
+    <a href="#">로그인</a>
+  </section>
+  </header>
+
+
+  <!-- # 추후 common에서 조립하여 쓸 수 있도록 한다.-->
+  <!-- navigator -->
+  <nav>
+  <ul>
+    <li><a href="#">자유 게시판</a></li>
+    <li><a href="#">질문 게시판</a></li>
+    <li><a href="#">급식표 게시판</a></li>
+    <li><a href="#">입시정보 게시판</a></li>
+    <li><a href="#">문제풀이 게시판</a></li>
+    <li><a href="#">공지사항</a></li>
+  </ul>
+  </nav>
+  <!-- cf. # 게시판 번호 부여시 아래와 같은 형식으로 변경할것 
+  <th:block th:each=" boardType: ${application.boardTypeList}">
+    <li>
+      <a th:href="@{/board/{boardCode}(boardCode=${boardType.boardCode})}" 
+      th:text="${boardType.boardName}">게시판이름</a>
+    </li>
+  </th:block> 
+  -->
+
+
+
   <section class="board-list"> 
     <ul>
       <li><a href="#">자유 게시판</a></li>
@@ -74,7 +123,7 @@
             <td>0</td>
 
             <!-- 게시글 작성일자 -->
-            <td>2023-12-22</td>
+            <td>2025-12-22</td>
            </tr>
         </tbody>
       </table>
@@ -87,13 +136,14 @@
 				<!-- 일반 목록 조회 (검색 X )-->
 				<ul class="pagination">
 
-					<!-- 첫 페이지로 이동 --> 
+					<!-- 첫 페이지로 이동 ( << )--> 
 					<li><a th:href="#">&lt;&lt;</a></li>
 
-					<!-- 이전 목록 마지막 번호로 이동 -->
+					<!-- 이전 목록 마지막 번호로 이동( < ) -->
 					<li><a th:href="#">&lt;</a></li>
 
 					<!-- 특정 페이지로 이동(현재 보고있는 페이지/보고있지 않은 페이지) -->
+          <!-- # 추후 반복문으로 작성할것 -->
 					<th:block>
             <li><a html="#" class="current">1</a></li>
             <li><a html="#">2</a></li>
@@ -128,12 +178,12 @@
 
     <!-- 검색창 -->
     <form name="searchForm">
-      <section name="key" id="searchKey">
-        	<option value="t">제목</option>
-					<option value="c">내용</option>
-					<option value="tc">제목+내용</option>
-					<option value="w">작성자</option>
-      </section>
+      <select name="key" id="searchKey">
+        <option value="t" selected>제목</option>
+				<option value="c">내용</option>
+				<option value="tc">제목+내용</option>
+				<option value="w">작성자</option>
+      </select>
 
 			<input type="text" name="query" id="searchQuery" placeholder="검색어를 입력해주세요.">
 
@@ -144,12 +194,42 @@
     </form>
   </section>
   
-  
+  <!-- footer -->
   <th:block th:replace="#"></th:block>
   
   <script src="#"></script>
 
-</body>
+
+
+
+</main>
+
+
+<!-- # 추후 common에서 조립하여 쓸 수 있도록 한다.-->
+<footer> 
+  
+  <div>
+  <!-- footer left -->
+  <section>
+    <ul>
+      <li><a href="#">개인정보 처리방침</a></li>
+      <li><a href="#">운영정책</a></li>
+      <li><a href="#">고객센터</a></li>
+  </section>
+
+  <!-- 빈 섹션-->
+  <section></section>
+
+  <!-- footer right -->
+  <section>
+    <pre>교시는 학생들을 위한 건전한 온라인 공간입니다. 
+      부적절한 게시물 발견 시 제재될 수 있습니다.</pre>
+    <button id="arrowUpBtn" class="fa-solid fa-arrow-up" style="color: #5c86e0;"></button>
+  </section>
+</div>
+
+
+</footer>
 
 </html>
 

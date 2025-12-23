@@ -1,0 +1,64 @@
+header {
+    background-color: var(--main-blue);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    color: white;
+}
+
+header section:first-child #homeLogo {
+    height: 30px; /* 로고 크기 조절 */
+    filter: brightness(0) invert(1); /* 검정 로고일 경우 흰색으로 변경 */
+}
+
+header section:nth-child(2) {
+    flex-grow: 1; /* 빈 공간 확보 */
+}
+
+/* 게시판, 채팅, 로그인 메뉴 */
+header section:not(:first-child):not(:nth-child(2)) {
+    margin-left: 25px;
+}
+
+header section a {
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+header section a:hover {
+    opacity: 1;
+}
+
+
+nav {
+    background-color: white;
+    border-bottom: 1px solid var(--border-light);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    padding-right: 5%;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: var(--nav-text);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--hover-blue);
+    text-decoration: underline;
+}
+
+

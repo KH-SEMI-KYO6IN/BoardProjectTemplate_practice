@@ -1,0 +1,63 @@
+footer {
+    background-color: #f0f2f5; /* 아주 연한 회색 배경 */
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e1e1e1;
+    color: #666;
+    font-size: 13px;
+    margin-top: auto; /* 페이지 내용이 적어도 하단에 위치하도록 함 */
+}
+
+/* footer left - 정책 링크 메뉴 */
+footer section:first-child ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+footer section:first-child ul li a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+}
+
+footer section:first-child ul li a:hover {
+    color: #333;
+}
+
+/* 중간 빈 섹션 */
+footer section:nth-child(2) {
+    flex-grow: 1;
+}
+
+/* footer right - 안내 문구 및 위로가기 버튼 */
+footer section:last-child {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+footer section:last-child p {
+    margin: 0;
+    color: #888;
+    max-width: 400px;
+    text-align: right;
+    line-height: 1.4;
+}
+
+/* 위로 가기 아이콘 (이미지의 파란색 화살표 버튼) */
+footer section:last-child img {
+    width: 35px;
+    height: 35px;
+    background-color: #5b76e1; /* 헤더와 같은 파란색 */
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+footer section:last-child img:hover {
+    background-color: #4a69d4;
+}
