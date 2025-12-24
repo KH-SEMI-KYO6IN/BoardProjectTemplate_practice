@@ -201,7 +201,6 @@ header {
 
 header section:first-child #homeLogo {
     height: 30px; /* 로고 크기 조절 */
-    filter: brightness(0) invert(1); /* 검정 로고일 경우 흰색으로 변경 */
 }
 
 header section:nth-child(2) {
